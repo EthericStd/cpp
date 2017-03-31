@@ -9,7 +9,7 @@ template <class A> class Population
     */
 private:
     int mN;
-    vector<A> mPopulation(int);
+    A* mPopulation[int];
 public:
     Population();
     Population(vector<A>, int);

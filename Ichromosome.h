@@ -1,8 +1,6 @@
 #ifndef ICHROMOSOME
 #define ICHROMOSOME
 
-#include<vector>
-
 using namespace std;
 
 template <class A> class Chromosome
@@ -13,7 +11,7 @@ template <class A> class Chromosome
     */
 private:
     int mN;
-    vector<A> mChromosome(int);
+    A* mChromosome[int];
 public:
     Chromosome();
     Chromosome(vector<A>, int);
