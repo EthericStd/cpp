@@ -1,6 +1,8 @@
 #ifndef ICHROMOSOME
 #define ICHROMOSOME
 
+#include"IGene.h"
+
 template <class T> class IChromosome
 {
     /*

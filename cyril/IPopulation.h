@@ -1,6 +1,8 @@
 #ifndef IPOPULATION
 #define IPOPULATION
 
+#include"IChromosome.h"
+
 template <class T> class IPopulation
 {
     /*

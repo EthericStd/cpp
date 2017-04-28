@@ -8,6 +8,12 @@ IGene::IGene()
     mName = "";
 }
 
+IGene::IGene(string pName)
+{
+    mName = pName;
+}
+
+
 string IGene::get_name()
 {
     return mName;

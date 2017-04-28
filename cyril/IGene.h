@@ -14,6 +14,7 @@ private:
     string mName;
 public:
     IGene();
+    IGene(string);
     string get_name();
     void Print();
 };

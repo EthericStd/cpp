@@ -67,3 +67,5 @@ void IChromosome<T>::Print()
         mIChromosome[i].Print();
     }
 }
+
+template class IChromosome<IGene>;

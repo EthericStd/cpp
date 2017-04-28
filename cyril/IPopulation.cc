@@ -67,3 +67,5 @@ void IPopulation<T>::Print()
         mIPopulation[i].Print();
     }
 }
+
+template class IPopulation<IGene>;

@@ -10,8 +10,11 @@ main.exe : $(OBJ) $(HEAD)
 IGene.o : IGene.cc IGene.h
 	g++ -c IGene.cc
 
-IChromosome.o : IChromosome.cc IChromosome.h
+IChromosome.o : IChromosome.cc IChromosome.h IGene.h
 	g++ -c IChromosome.cc
 
-IPopulation.o : IPopulation.cc IPopulation.h
+IPopulation.o : IPopulation.cc IPopulation.h IChromosome.h
 	g++ -c IPopulation.cc
+
+clear :
+	rm main.exe main.o IGene.o IChromosome.o IPopulation.o
