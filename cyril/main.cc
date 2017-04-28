@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Igene.h"
-#include "Ichromosome.h"
-#include "Ipopulation.h"
+#include "IGene.h"
+#include "IChromosome.h"
+#include "IPopulation.h"
 
 using namespace std;
 
@@ -9,7 +9,9 @@ int main(void)
 {
     cout<<1<<endl;
 
-    g = Gene
+    IGene g;
+    IChromosome<int> c;
+    IPopulation<int> p;
 
     return 0;
 }
