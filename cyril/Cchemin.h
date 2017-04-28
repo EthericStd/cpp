@@ -5,6 +5,7 @@ class Chemin : public Chromosome
     /*
     Classe représentant un chromosome
     composée de plusieurs génes
+    
     */
 private:
 
