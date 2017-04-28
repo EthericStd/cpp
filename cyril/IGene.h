@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template <class A> class Gene
+class IGene
 {
     /*
     Classe représentant un gène
@@ -13,9 +13,10 @@ template <class A> class Gene
 private:
     string mName;
 public:
-    Gene();
+    IGene();
+    IGene(string);
     string get_name();
-    void put_name(string);
+    void Print();
 };
 
 #endif
