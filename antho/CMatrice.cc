@@ -6,15 +6,15 @@
 
 using namespace std;
 
-CMatrix::sInstance = NULL;
+CMatrix* CMatrix::sInstance = NULL;
 
-CMatrix& CMatrix::getInstance()
+CMatrix* CMatrix::getInstance()
 {
   if (sInstance == NULL) sInstance = new CMatrix();
   return sInstance;
 };
 
-CMatrix& CMatrix::getInstance(int pnb)
+CMatrix* CMatrix::getInstance(int pnb)
 {
   if (sInstance == NULL) sInstance = new CMatrix(pnb);
   return sInstance;
@@ -65,6 +65,7 @@ void CMatrix::AfficheMatrix()
     }
     cout << "]\n";
   }
+  cout << "\n";
 }
 
 int* CMatrix::CreateCity()

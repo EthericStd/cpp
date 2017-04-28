@@ -1,5 +1,5 @@
 main.exe: main.o CMatrice.o
-	g++ main.o CMatrice.o -c main.exe
+	g++ main.o CMatrice.o -o main.exe
 
 main.o: main.cc CMatrice.h
 	g++ main.cc -c
