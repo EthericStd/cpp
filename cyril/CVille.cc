@@ -5,10 +5,12 @@ using namespace std;
 
 CVille::CVille()
 {
-    mName = "";
+    //mName = "";
+    x = 0;
+    y = 0;
 }
 
-CVille::CVille(string pName)
+/*CVille::CVille(string pName)
 {
     mName = pName;
 }
@@ -22,4 +24,4 @@ string CVille::get_name()
 void CVille::Print()
 {
     cout<<mName<<endl;
-}
+}*/

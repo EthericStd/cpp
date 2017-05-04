@@ -1,24 +1,17 @@
 #ifndef CVille
 #define CVille
 
-#include<string>
-
-using namespace std;
+//#include<string>
 
 class CVille
 {
-    /*
-    Classe représentant un gène
-    */
 private:
-    string mName;
+    //string mName;
     int x;
     int y;
 public:
     CVille();
-    CVille(string);
-    string get_name();
-    void Print();
+
 };
 
 #endif

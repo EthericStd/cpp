@@ -1,71 +1,71 @@
 #include<iostream>
-#include"IPopulation.h"
+#include"CPopulation.h"
 
 using namespace std;
 
 template <class T>
-IPopulation<T>::IPopulation()
+CPopulation<T>::CPopulation()
 {
     mN = 0;
-    mIPopulation = 0;
+    mCPopulation = 0;
 }
 
 template <class T>
-IPopulation<T>::IPopulation(T* pIPopulation, int pN)
+CPopulation<T>::CPopulation(T* pCPopulation, int pN)
 {
     mN = pN;
-    mIPopulation = new T[mN];
+    mCPopulation = new T[mN];
     for(int i=0;i<mN;i++)
     {
-        mIPopulation[i] = pIPopulation[i];
+        mCPopulation[i] = pCPopulation[i];
     }
 }
 
 template <class T>
-IPopulation<T>::IPopulation(const IPopulation<T>& pP)
+CPopulation<T>::CPopulation(const CPopulation<T>& pP)
 {
     mN = pP.mN;
-    mIPopulation = new T[mN];
+    mCPopulation = new T[mN];
     for(int i=0;i<mN;i++)
     {
-        mIPopulation[i] = pP.mIPopulation[i];
+        mCPopulation[i] = pP.mCPopulation[i];
     }
 }
 
 template <class T>
-IPopulation<T>::~IPopulation()
+CPopulation<T>::~CPopulation()
 {
-    delete [] mIPopulation;
+    delete [] mCPopulation;
 }
 
 template <class T>
-IPopulation<T>& IPopulation<T>::operator=(IPopulation<T>& pP)
+CPopulation<T>& CPopulation<T>::operator=(CPopulation<T>& pP)
 {
     if (this != &pP)
     {
         mN = pP.mN;
-        mIPopulation = new T[mN];
+        mCPopulation = new T[mN];
         for(int i=0;i<mN;i++)
         {
-            mIPopulation[i] = pP.mIPopulation[i];
+            mCPopulation[i] = pP.mCPopulation[i];
         }
     }
 return *this;
 }
 
 template <class T>
-int IPopulation<T>::get_lenght()
+int CPopulation<T>::get_lenght()
 {
     return mN;
 }
 
 template <class T>
-void IPopulation<T>::Print()
+void CPopulation<T>::Print()
 {
     for(int i=0;i<mN;i++)
     {
-        mIPopulation[i].Print();
+        mCPopulation[i].Print();
     }
 }
 
-template class IPopulation< CChemin<CVille> >;
+template class CPopulation< CChemin<CVille> >;

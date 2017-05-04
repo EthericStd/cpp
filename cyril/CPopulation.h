@@ -1,24 +1,24 @@
-#ifndef IPOPULATION
-#define IPOPULATION
+#ifndef CPopulation
+#define CPopulation
 
 #include"CChemin.h"
 
-template <class T> class IPopulation
+template <class T> class CPopulation
 {
     /*
-    Classe représentant une Ipopulation
+    Classe représentant une CPopulation
     composée de plusieurs chromosomes
     */
 private:
     int mN;
-    T* mIPopulation;
+    T* mCPopulation;
 public:
-    IPopulation();
-    IPopulation(T*, int);
-    IPopulation(const IPopulation&);
-    ~IPopulation();
+    CPopulation();
+    CPopulation(T*, int);
+    CPopulation(const CPopulation&);
+    ~CPopulation();
 
-    IPopulation& operator=(IPopulation&);
+    CPopulation& operator=(CPopulation&);
 
     int get_lenght();
     void Print();

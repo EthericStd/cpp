@@ -1,21 +1,21 @@
 #include <iostream>
 #include "CVille.h"
 #include "CChemin.h"
-#include "IPopulation.h"
+#include "CPopulation.h"
 
 using namespace std;
 
 int main(void)
 {
 
-    cout<<"Gene :"<<endl;
-    CVille g1("gene1"), g2("gene2"), g3("gene3"), g4("gene4");
+    cout<<"Ville :"<<endl;
+    CVille g1("Toulon"), g2("Toulouse"), g3("Renes"), g4("Bordeau");
     g1.Print();
     g2.Print();
     g3.Print();
     g4.Print();
 
-    cout<<"Chromosome :"<<endl;
+    /*cout<<"Chemin :"<<endl;
     CVille tg1[2] = {g1, g2};
     CChemin<CVille> c1(tg1, 2);
     c1.Print();
@@ -25,8 +25,8 @@ int main(void)
 
     cout<<"Population"<<endl;
     CChemin<CVille> tc1[2] = {c1, c2};
-    IPopulation< CChemin<CVille> > p(tc1, 2);
-    p.Print();
+    CPopulation< CChemin<CVille> > p(tc1, 2);
+    p.Print();*/
 
 
     /*
