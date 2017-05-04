@@ -1,6 +1,6 @@
 #include <iostream>
-#include "IGene.h"
-#include "IChromosome.h"
+#include "CVille.h"
+#include "CChemin.h"
 #include "IPopulation.h"
 
 using namespace std;
@@ -8,26 +8,25 @@ using namespace std;
 int main(void)
 {
 
-    IGene g1("gene1"), g2("gene2"), g3("gene3"), g4("gene4");
     cout<<"Gene :"<<endl;
+    CVille g1("gene1"), g2("gene2"), g3("gene3"), g4("gene4");
     g1.Print();
     g2.Print();
     g3.Print();
     g4.Print();
 
     cout<<"Chromosome :"<<endl;
-    IGene tg1[2] = {g1, g2};
-    IChromosome<IGene> c1(tg1, 2);
+    CVille tg1[2] = {g1, g2};
+    CChemin<CVille> c1(tg1, 2);
     c1.Print();
-
-    IGene tg2[2] = {g3, g4};
-    IChromosome<IGene> c2(tg2, 2);
+    CVille tg2[2] = {g3, g4};
+    CChemin<CVille> c2(tg2, 2);
     c2.Print();
 
-
-    //IPopulation<IChromosome> p(tc, 3);
-    //cout<<"population"<<endl;
-    //p.Print();
+    cout<<"Population"<<endl;
+    CChemin<CVille> tc1[2] = {c1, c2};
+    IPopulation< CChemin<CVille> > p(tc1, 2);
+    p.Print();
 
 
     /*

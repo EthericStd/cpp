@@ -1,25 +1,25 @@
 #include<iostream>
-#include"IGene.h"
+#include"CVille.h"
 
 using namespace std;
 
-IGene::IGene()
+CVille::CVille()
 {
     mName = "";
 }
 
-IGene::IGene(string pName)
+CVille::CVille(string pName)
 {
     mName = pName;
 }
 
 
-string IGene::get_name()
+string CVille::get_name()
 {
     return mName;
 }
 
-void IGene::Print()
+void CVille::Print()
 {
     cout<<mName<<endl;
 }

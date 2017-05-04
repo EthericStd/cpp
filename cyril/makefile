@@ -1,5 +1,5 @@
-OBJ=main.o IGene.o IChromosome.o IPopulation.o
-HEAD=IGene.h IChromosome.h IPopulation.h
+OBJ=main.o CVille.o CChemin.o IPopulation.o
+HEAD=CVille.h CChemin.h IPopulation.h
 
 all : main.exe
 
@@ -7,14 +7,14 @@ main.exe : $(OBJ) $(HEAD)
 	g++ $(OBJ) -o main.exe
 	./main.exe
 
-IGene.o : IGene.cc IGene.h
-	g++ -c IGene.cc
+CVille.o : CVille.cc CVille.h
+	g++ -c CVille.cc
 
-IChromosome.o : IChromosome.cc IChromosome.h IGene.h
-	g++ -c IChromosome.cc
+CChemin.o : CChemin.cc CChemin.h CVille.h
+	g++ -c CChemin.cc
 
-IPopulation.o : IPopulation.cc IPopulation.h IChromosome.h
+IPopulation.o : IPopulation.cc IPopulation.h CChemin.h
 	g++ -c IPopulation.cc
 
 clear :
-	rm main.exe main.o IGene.o IChromosome.o IPopulation.o
+	rm main.exe main.o CVille.o CChemin.o IPopulation.o

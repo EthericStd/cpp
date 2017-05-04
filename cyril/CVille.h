@@ -1,14 +1,24 @@
-#include"gene.h"
+#ifndef CVille
+#define CVille
 
-class Ville : public Gene
+#include<string>
+
+using namespace std;
+
+class CVille
 {
     /*
-    Classe représentant une ville,
-    hérite de Gène
+    Classe représentant un gène
     */
 private:
+    string mName;
     int x;
     int y;
 public:
-    Ville();
-}
+    CVille();
+    CVille(string);
+    string get_name();
+    void Print();
+};
+
+#endif

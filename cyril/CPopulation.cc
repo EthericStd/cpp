@@ -68,4 +68,4 @@ void IPopulation<T>::Print()
     }
 }
 
-template class IPopulation<IGene>;
+template class IPopulation< CChemin<CVille> >;

@@ -1,19 +1,29 @@
-#include"chromosome.h"
+#ifndef CChemin
+#define CChemin
 
-class Chemin : public Chromosome
+#include"CVille.h"
+
+template <class T> class CChemin
 {
     /*
-    Classe représentant un chromosome
+    Classe représentant un CChemin
     composée de plusieurs génes
     */
 private:
-
+    int mN;
+    T* mCChemin;
 public:
-    // a revoir <Ville>
-    Chemin()
-    Chemin(Ville* v, int n)
-    Chemin(const Chromosome&);
-    ~Chemin();
+    CChemin();
+    CChemin(T* , int);
+    CChemin(const CChemin&);
+    ~CChemin();
 
-    Chromosome& operator=(Chromosome&);
-}
+    CChemin& operator=(CChemin&);
+
+    int get_lenght();
+    void Print();
+
+    CVille& operator[](int);
+};
+
+#endif

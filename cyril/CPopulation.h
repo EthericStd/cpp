@@ -1,7 +1,7 @@
 #ifndef IPOPULATION
 #define IPOPULATION
 
-#include"IChromosome.h"
+#include"CChemin.h"
 
 template <class T> class IPopulation
 {
