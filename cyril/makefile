@@ -1,5 +1,5 @@
-OBJ=main.o CVille.o CChemin.o CPopulation.o
-HEAD=CVille.h CChemin.h CPopulation.h
+OBJ=main.o CVille.o CChemin.o CPopulation.o Mutation.o
+HEAD=CVille.h CChemin.h CPopulation.h Mutation.h
 
 all : main.exe
 
@@ -15,6 +15,9 @@ CChemin.o : CChemin.cc CChemin.h CVille.h
 
 CPopulation.o : CPopulation.cc CPopulation.h CChemin.h
 	g++ -c CPopulation.cc
+
+Mutation.o : Mutation.cc Mutation.h CVille.h CChemin.h CPopulation.h
+	g++ -c Mutation.cc
 
 clear :
 	rm -f main.exe main.o CVille.o CChemin.o CPopulation.o

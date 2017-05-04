@@ -1,13 +1,14 @@
-#ifndef CChemin
-#define CChemin
+#ifndef __CChemin__
+#define __CChemin__
 
 #include"CVille.h"
+#include <cmath>
 
 template <class T> class CChemin
 {
     /*
-    Classe représentant un CChemin
-    composée de plusieurs génes
+    Classe représentant un chemin
+    composée de plusieurs villes
     */
 private:
     int mN;
@@ -24,6 +25,8 @@ public:
     void Print();
 
     CVille& operator[](int);
+
+    float Fitness();
 };
 
 #endif

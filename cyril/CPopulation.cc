@@ -62,10 +62,17 @@ int CPopulation<T>::get_lenght()
 template <class T>
 void CPopulation<T>::Print()
 {
+    cout<<"Population :"<<endl;
     for(int i=0;i<mN;i++)
     {
         mCPopulation[i].Print();
     }
+}
+
+template <class T>
+CChemin<CVille>& CPopulation<T>::operator[](int i)
+{
+    return mCPopulation[i];
 }
 
 template class CPopulation< CChemin<CVille> >;

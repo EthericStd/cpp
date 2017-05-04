@@ -62,6 +62,7 @@ int CChemin<T>::get_lenght()
 template <class T>
 void CChemin<T>::Print()
 {
+    cout<<"Chemin: "<<endl;
     for(int i=0;i<mN;i++)
     {
         mCChemin[i].Print();
@@ -72,6 +73,19 @@ template <class T>
 CVille& CChemin<T>::operator[](int i)
 {
     return mCChemin[i];
+}
+
+template <class T>
+float CChemin<T>::Fitness()
+{
+    float x, y, res = 0;
+    for(int i=0;i<mN-1;i++)
+    {
+        x = mCChemin[i+1].get_x() - mCChemin[i].get_x();
+        y = mCChemin[i+1].get_y() - mCChemin[i].get_y();
+        res += abs(sqrt(pow(x,2) + pow(y,2)));
+    }
+    return res;
 }
 
 template class CChemin<CVille>;

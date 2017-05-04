@@ -1,13 +1,13 @@
-#ifndef CPopulation
-#define CPopulation
+#ifndef __CPopulation__
+#define __CPopulation__
 
 #include"CChemin.h"
 
 template <class T> class CPopulation
 {
     /*
-    Classe représentant une CPopulation
-    composée de plusieurs chromosomes
+    Classe représentant une population
+    composée de plusieurs chemins
     */
 private:
     int mN;
@@ -22,6 +22,8 @@ public:
 
     int get_lenght();
     void Print();
+
+    CChemin<CVille>& operator[](int);
 };
 
 #endif
