@@ -19,6 +19,7 @@ public:
     ~CPopulation();
 
     CPopulation& operator=(CPopulation&);
+    CPopulation& operator+(CPopulation&);
 
     int get_lenght();
     void Print();

@@ -54,6 +54,21 @@ return *this;
 }
 
 template <class T>
+CPopulation<T>& CPopulation<T>::operator+(CPopulation<T>& pP)
+{
+    int mN2 = mN + pP.mN;
+    T* mCPopulation2 = new T[mN2];
+    for(int i=0;i<mN2;i++)
+    {
+        if(i < mN) mCPopulation2[i] = mCPopulation[i];
+        else mCPopulation2[i] = pP.mCPopulation[i-mN];
+    }
+    mN = mN2;
+    mCPopulation = mCPopulation2;
+return *this;
+}
+
+template <class T>
 int CPopulation<T>::get_lenght()
 {
     return mN;

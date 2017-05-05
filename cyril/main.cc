@@ -3,6 +3,9 @@
 #include "CChemin.h"
 #include "CPopulation.h"
 #include "Mutation.h"
+#include "cng.h"
+#include "Elitisme.h"
+#include "Selection.h"
 
 
 #include<ctime>
@@ -11,11 +14,11 @@
 
 using namespace std;
 
-int main(void)
+int main(int argc, char** argv)
 {
     srand(time(NULL));
 
-    
+
     //TESTS
     CVille v1("Toulon", 0, 1), v2("Toulouse", 0, 5), v3("Renes", 1, 3), v4("Bordeau", 0, 4);
     /*v1.Print();
@@ -31,7 +34,7 @@ int main(void)
     c2.Print();
 
     CChemin<CVille> C[2] = {c1, c2};
-    CPopulation< CChemin<CVille> > p(C, 2);
+    // CPopulation< CChemin<CVille> > p(C, 2);
     p.Print();
 
     cout<<"Fitness 1:"<<c1.Fitness()<<endl;
@@ -42,10 +45,25 @@ int main(void)
     CChemin<CVille> C1[2] = {c3, c3};
     CPopulation< CChemin<CVille> > p1(C1, 2);
 
-    p1.Print();
-    Mutation Mut;
-    Mut.start(&p1);
-    p1.Print();
+    // p1.Print();
+    // Mutation Mut;
+    // Mut.start(&p1);
+    // p1.Print();
+
+    // p1.Print();
+    Elitisme Eli(1);
+    CPopulation< CChemin<CVille> > p2 = Eli.start(p1);
+    // p2.Print();
+
+    CPopulation< CChemin<CVille> > p3;
+    p3 = p1 + p1;
+    cout<<"AH"<<endl;
+    p3.Print();
+
+    cout<<"AH"<<endl;
+    Selection Sel(2);
+    CPopulation< CChemin<CVille> > p4 = Sel.roulette(p3);
+    p4.Print();
 
 /*
     //DEBUT
@@ -62,6 +80,13 @@ int main(void)
         mutation
     }
     */
+
+    // char titre[35] = "Le voyageur de commerce";
+    // cng_init_window(&argc, argv, titre, 1200, 675);
+    // //cng_display_func();
+    // cng_clear_screen();
+    // cng_main_loop();
+    // cng_destroy_window();
 
     return 0;
 
