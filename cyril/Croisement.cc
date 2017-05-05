@@ -74,8 +74,9 @@ CPopulation< CChemin<CVille> > Croisement::start(CPopulation< CChemin<CVille> >&
     {
         // cout<<"N "<<N/2<<"  i "<<i<<endl;
         // cout<<"visited "<<visited[0]<<" "<<visited[1]<<" "<<visited[2]<<" "<<visited[3]<<endl;
-        // cout<<"ran "<<ran[0]<<" "<<ran[1]<<endl;
+
         ran = random(visited, N);
+        cout<<"ran "<<ran[0]<<" "<<ran[1]<<endl;
         CChemin<CVille> che_memo[2] = {Pop[ran[0]],Pop[ran[1]]};
         CPopulation< CChemin<CVille> > Pop_memo(che_memo, 2);
 
@@ -92,7 +93,12 @@ CPopulation< CChemin<CVille> > Croisement::start(CPopulation< CChemin<CVille> >&
         visited[ran[0]] = 1;
         visited[ran[1]] = 1;
     }
-    // cout<<"visited "<<visited[0]<<" "<<visited[1]<<" "<<visited[2]<<" "<<visited[3]<<endl;
+    // cout<<"visited";
+    // for(int r=0;r<N;r++)
+    // {
+    //     cout<<visited[r]<<" ";
+    // }
+    // cout<<endl;
 
     return Pop1;
 }

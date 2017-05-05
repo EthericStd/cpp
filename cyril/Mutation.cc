@@ -14,7 +14,7 @@ void echange(CChemin<CVille>* Che)
     {
         r2 = rand() % N;
     }
-    std::cout<<"r: "<<r1<<" "<<r2<<std::endl;
+    // std::cout<<"r: "<<r1<<" "<<r2<<std::endl;
 
     CVille memo = (*Che)[r1];
     (*Che)[r1] = (*Che)[r2];

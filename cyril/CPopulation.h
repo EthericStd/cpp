@@ -26,6 +26,8 @@ public:
     void Print();
 
     CChemin<CVille>& operator[](int);
+
+    int get_len();
 };
 
 void init_pop(CPopulation<CChemin<CVille> >* Pop);

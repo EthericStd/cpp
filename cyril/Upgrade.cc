@@ -9,15 +9,27 @@
 
 using namespace std;
 
+
+Mutation Mut;
+Croisement Cro;
+Selection Sel(NB_SELECTION);
+Elitisme Eli(NB_Elitiste);
+
 void Upgrade::start(CPopulation< CChemin<CVille> >* Pop)
 {
-    Elitisme Eli(NB_Elitiste);
     CPopulation< CChemin<CVille> > Pop_elitiste = Eli.start(*Pop);
-    Selection Sel(NB_SELECTION);
+    // cout<<"eli "<<endl;
+    // Pop_elitiste.get_len();
     CPopulation< CChemin<CVille> > Pop_select = Sel.roulette(*Pop);
-    Croisement Cro;
+    // cout<<"sel "<<endl;
+    // Pop_select.get_len();
     CPopulation< CChemin<CVille> > Pop_croisement = Cro.start(Pop_select);
-    
+    // cout<<"cro "<<endl;
+    // Pop_croisement.get_len();
+    Mut.start(&Pop_croisement);
+    // cout<<"mut "<<endl;
+    // Pop_croisement.get_len();
     (*Pop) = Pop_elitiste + Pop_croisement;
-
+    // cout<<"pop "<<endl;
+    // Pop->get_len();
 }

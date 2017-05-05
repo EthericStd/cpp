@@ -1,8 +1,8 @@
-#define MAX_ITER 10000
-#define NB_CHEMIN 10
-#define NB_VILLE 20
-#define MAX_X 20
-#define MAX_Y 20
+#define MAX_ITER 100000
+#define NB_CHEMIN 50
+#define NB_VILLE 50
+#define MAX_X 10
+#define MAX_Y 10
 
 #define NB_Elitiste NB_CHEMIN*0.2
 #define NB_SELECTION NB_CHEMIN*0.8

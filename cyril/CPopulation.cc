@@ -144,4 +144,15 @@ void init_pop(CPopulation<CChemin <CVille> >* Pop)
     (*Pop) = Pop_memo;
 }
 
+
+template <class T>
+int CPopulation<T>::get_len()
+{
+    // for(int i=0;i<mN;i++)
+    // {
+    //     mCPopulation[i] = pP.mCPopulation[i];
+    // }
+    cout<<"mN"<<mN<<endl;
+}
+
 template class CPopulation< CChemin<CVille> >;

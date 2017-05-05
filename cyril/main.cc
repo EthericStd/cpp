@@ -35,6 +35,7 @@ void print_pop(CPopulation< CChemin<CVille> > Pop)
         y = One[0][0].get_y()*FACTOR_Y;
         cng_current_color(255, 0, 0);
         cng_circle(x, y, 5);
+        cout<<One[0].Fitness()<<endl;
         for(int j=1;j<NB_VILLE;j++)
         {
             x1 = One[0][j].get_x()*FACTOR_X;
@@ -72,6 +73,7 @@ void dessin(void)
 
     print_infos();
 
+
     usleep(10000);
     cng_swap_screen();
     cng_clear_screen();
@@ -93,6 +95,19 @@ int main(int argc, char** argv)
     cng_clear_screen();
     cng_main_loop();
     cng_destroy_window();
+
+    // CVille v1("Toulon", 0, 1), v2("Toulouse", 0, 2), v3("Renes", 0, 3), v4("Bordeau", 0, 4);
+    // CVille V4[4] = {v1, v2, v3, v4};
+    // CChemin<CVille> c3(V4, 4);
+    // CVille V5[4] = {v4, v3, v2, v1};
+    // CChemin<CVille> c4(V5, 4);
+    // CChemin<CVille> C1[2] = {c3, c4};
+    // CPopulation< CChemin<CVille> > p1(C1, 2);
+    //
+    // Croisement Cro;
+    // p1.Print();
+    // CPopulation< CChemin<CVille> > p2 = Cro.start(p1);
+    // p2.Print();
 
     return 0;
 
