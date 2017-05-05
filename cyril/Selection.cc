@@ -22,11 +22,7 @@ float* get_sums(float* fitness, int N)
 
 float get_sum(float* tab, int N)
 {
-    float sum;
-    for(int i=0;i<N;i++)
-    {
-        sum += tab[i];
-    }
+    float sum = tab[N-1];
     return sum;
 }
 
@@ -55,10 +51,9 @@ CPopulation< CChemin<CVille> > Selection::roulette(CPopulation< CChemin<CVille> 
                     tab = get_sums(fitness, N);
                     sum = get_sum(tab, N);
                     ran = (((float) rand()) / ((float) RAND_MAX)) * sum;
-                    cout<<1<<endl;
+                    k = N;
                 }
         }
-        cout<<2<<endl;
     }
     CPopulation< CChemin<CVille> > Pop1(tC ,mN);
     return Pop1;

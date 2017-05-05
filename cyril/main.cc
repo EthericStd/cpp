@@ -6,11 +6,36 @@
 #include "cng.h"
 #include "Elitisme.h"
 #include "Selection.h"
+#include "Croisement.h"
+
+#define MAX_ITER
 
 
 #include<ctime>
 #include<cstdlib>
 
+/*void print_pop()
+{
+
+}
+
+void dessin(void)
+{
+    if(cpt < MAX_ITER)
+    {
+    print_pop()
+
+    Cpopulation pop, pop1;
+    pop = matriceville.init(pop);
+    elitisme
+    selection et croisement
+    mutation
+
+    usleep(10000);
+    cng_swap_screen();
+    cng_clear_screen();
+    }
+}*/
 
 using namespace std;
 
@@ -57,33 +82,25 @@ int main(int argc, char** argv)
 
     CPopulation< CChemin<CVille> > p3;
     p3 = p1 + p1;
-    cout<<"AH"<<endl;
-    p3.Print();
+    // cout<<"AH"<<endl;
+    // p3.Print();
 
-    cout<<"AH"<<endl;
+    // cout<<"AH"<<endl;
     Selection Sel(2);
     CPopulation< CChemin<CVille> > p4 = Sel.roulette(p3);
-    p4.Print();
+    // p4.Print();
 
-/*
-    //DEBUT
-    //--initialisation
-    Cpopulation pop, pop1;
-    pop = matriceville.init(pop);
+    Croisement Cro;
+    CPopulation< CChemin<CVille> > p5 = Cro.start(p3);
 
-    //--boucle principale
-    int i, max=100;
-    for(i=0;i<max;i++)
-    {
-        elitisme
-        selection et croisement
-        mutation
-    }
-    */
+    CPopulation< CChemin<CVille> > Pop_memo;
+    Pop_memo = p3;
+    cout<<"test Pop_memo"<<endl;
+    // Pop_memo.Print();
 
     // char titre[35] = "Le voyageur de commerce";
     // cng_init_window(&argc, argv, titre, 1200, 675);
-    // //cng_display_func();
+    // cng_display_func(dessin);
     // cng_clear_screen();
     // cng_main_loop();
     // cng_destroy_window();
