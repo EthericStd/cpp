@@ -2,6 +2,7 @@
 #define __CPopulation__
 
 #include"CChemin.h"
+#include"CVille.h"
 
 template <class T> class CPopulation
 {
@@ -26,5 +27,7 @@ public:
 
     CChemin<CVille>& operator[](int);
 };
+
+void init_pop(CPopulation<CChemin<CVille> >* Pop);
 
 #endif

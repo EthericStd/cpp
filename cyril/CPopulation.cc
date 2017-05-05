@@ -1,5 +1,9 @@
 #include<iostream>
 #include"CPopulation.h"
+#include"option.h"
+
+#include<cstdlib>
+#include<string>
 
 using namespace std;
 
@@ -84,10 +88,60 @@ void CPopulation<T>::Print()
     }
 }
 
+CVille* t_random(CVille* tab, int N)
+{
+    CVille* t = new CVille[N];
+    for(int i=0;i<N;i++)
+    {
+        t[i] = tab[i];
+    }
+    int a, b;
+    CVille c;
+    for(int i=0;i<N*10;i++)
+    {
+        a = rand() % N;
+        b = rand() % N;
+        c = t[a];
+        t[a] = t[b];
+        t[b] = c;
+    }
+    return t;
+}
+
 template <class T>
 CChemin<CVille>& CPopulation<T>::operator[](int i)
 {
     return mCPopulation[i];
+}
+
+
+void init_pop(CPopulation<CChemin <CVille> >* Pop)
+{
+    // on crée toutes les villes dans tV
+    int N = NB_VILLE;
+    CVille tV[N];
+    int x, y;
+    for(int i=0;i<N;i++)
+    {
+        x = rand() % MAX_X;
+        y = rand() % MAX_Y;
+        //tV[i] = CVille(to_string(i), x, y);
+        tV[i] = CVille("lol", x, y);
+    }
+
+    // on crée tous les chemins dans tC
+    int M = NB_CHEMIN;
+    CChemin<CVille> tC[M];
+    for(int j=0;j<M;j++)
+    {
+        CVille* t_rand;
+        t_rand = t_random(tV, N);
+        CChemin<CVille> memo(t_rand, N);
+        tC[j] = memo;
+        // tC[j].Print();
+    }
+    CPopulation< CChemin<CVille> > Pop_memo(tC, M);
+    (*Pop) = Pop_memo;
 }
 
 template class CPopulation< CChemin<CVille> >;
