@@ -79,6 +79,8 @@ CVille& CChemin<T>::operator[](int i)
 template <class T>
 float CChemin<T>::Fitness()
 {
+    // fonction retournant la Fitness d'un chemin
+    // la Fitness est calculée par rapport à la Fitness du pire chemin possible
     float worst_fitness = sqrt(pow(MAX_X,2) + pow(MAX_Y,2));
     float x, y, res = 0;
     for(int i=0;i<mN-1;i++)

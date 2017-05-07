@@ -11,25 +11,30 @@ template <class T> class CPopulation
     composée de plusieurs chemins
     */
 private:
+    // nombre de chemins
     int mN;
+    // tableau des chemins
     T* mCPopulation;
 public:
+    // constructeurs et destructeur
     CPopulation();
     CPopulation(T*, int);
     CPopulation(const CPopulation&);
     ~CPopulation();
 
+    // surchage d'opérateurs
     CPopulation& operator=(CPopulation&);
     CPopulation& operator+(CPopulation&);
-
-    int get_lenght();
-    void Print();
-
     CChemin<CVille>& operator[](int);
 
-    int get_len();
+    // retourne la nombre de chemins (pour tests)
+    int get_lenght();
+    // affiche sur le terminal la population (pour tests)
+    void Print();
 };
 
+// fonction initiant une population
+// avec des villes placées aléatoirement
 void init_pop(CPopulation<CChemin<CVille> >* Pop);
 
 #endif

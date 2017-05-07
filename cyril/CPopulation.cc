@@ -125,11 +125,12 @@ void init_pop(CPopulation<CChemin <CVille> >* Pop)
     {
         x = rand() % MAX_X;
         y = rand() % MAX_Y;
-        //tV[i] = CVille(to_string(i), x, y);
-        tV[i] = CVille("lol", x, y);
+        tV[i] = CVille("ville", x, y);
     }
 
-    // on crée tous les chemins dans tC
+    // on crée tous les chemins dans tC.
+    // on remplit chaque chemin de tC
+    // avec des villes de tV aléatoirement
     int M = NB_CHEMIN;
     CChemin<CVille> tC[M];
     for(int j=0;j<M;j++)
@@ -138,21 +139,10 @@ void init_pop(CPopulation<CChemin <CVille> >* Pop)
         t_rand = t_random(tV, N);
         CChemin<CVille> memo(t_rand, N);
         tC[j] = memo;
-        // tC[j].Print();
     }
     CPopulation< CChemin<CVille> > Pop_memo(tC, M);
     (*Pop) = Pop_memo;
 }
 
-
-template <class T>
-int CPopulation<T>::get_len()
-{
-    // for(int i=0;i<mN;i++)
-    // {
-    //     mCPopulation[i] = pP.mCPopulation[i];
-    // }
-    cout<<"mN"<<mN<<endl;
-}
 
 template class CPopulation< CChemin<CVille> >;

@@ -11,6 +11,7 @@ Elitisme::Elitisme(int pN)
 
 int get_max(float* t, int N)
 {
+    // retoune la valeur maximum du tableau en paramètre
     float max = t[0];
     int index = 0;
     for(int i=1;i<N;i++)
@@ -26,7 +27,9 @@ int get_max(float* t, int N)
 
 CPopulation< CChemin<CVille> > Elitisme::start(CPopulation< CChemin<CVille> >& Pop)
 {
-    //récupère la fitness (plus grand = mieux)
+    // fonction principale de la classe
+
+    // on récupère la fitness des chemins dans t (plus grand = mieux)
     int N = Pop.get_lenght();
     float t[N];
     for(int i=0;i<N;i++)
@@ -34,7 +37,8 @@ CPopulation< CChemin<CVille> > Elitisme::start(CPopulation< CChemin<CVille> >& P
         t[i] = Pop[i].Fitness();
     }
 
-    //crée le tableau des indices a récupérer
+    // on crée la nouvelle population des chemins
+    // avec la meilleure Fitness
     int index;
     CChemin<CVille> tC[mN];
     for(int j=0;j<mN;j++)

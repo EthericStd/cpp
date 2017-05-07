@@ -15,7 +15,7 @@ class Mutation
 private:
     //rien
 public:
-    //on laisse les constructeur par défaut
+    // lance la mutation
     void start(CPopulation< CChemin<CVille> >*);
 };
 

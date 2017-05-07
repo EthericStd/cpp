@@ -14,6 +14,7 @@ class Upgrade
 private:
     //rien
 public:
+    // lance l'amélioration de la population passée par adresse en paramètre
     void start(CPopulation< CChemin<CVille> >*);
 };
 

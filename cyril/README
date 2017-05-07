@@ -1,0 +1,13 @@
+A noter :
+Pendant la simulation, on voit certaines villes qui disparaissent et réapparaissent
+même si l'effet tend à faire disparaître toutes les villes.
+On remarque également que le tracé passe plusieurs fois par le même rond (ville)
+Le problème vient du croisement, même si les fonctions s'exécutent normalement
+selon la définition générale du croisement vue en TP et sur internet,
+notre sujet du voyageur de commerce nécéssite un croisement particulier.
+En effet il ne faut pas que l'on retrouve 2 fois la même ville dans un chemin
+et c'est ce qu'il se passe quand on applique un croisement général.
+C'est pour cela que certaines villes disparaissent et que le tracé passe
+plusieurs fois par les mêmes ronds (villes).
+Ceci étant dit, nous avons préféré laisser la fonction générale du croisement
+car la résolution de la fitness était secondaire.

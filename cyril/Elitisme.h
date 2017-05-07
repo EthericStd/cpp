@@ -12,9 +12,13 @@ class Elitisme
     Classe retournant les meilleurs chemins
     */
 private:
+    // nombre de chemins retournés par l'élitisme
     int mN;
 public:
+    // constructeur
     Elitisme(int);
+
+    // lance l'élitisme
     CPopulation< CChemin<CVille> > start(CPopulation< CChemin<CVille> >&);
 };
 

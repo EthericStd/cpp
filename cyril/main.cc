@@ -19,12 +19,15 @@
 
 using namespace std;
 
-int cpt = 0;
-CPopulation< CChemin<CVille> > Pop;
-Upgrade Upg;
+// variables globales
+int cpt = 0; // compteur de génération
+CPopulation< CChemin<CVille> > Pop; // Population
+Upgrade Upg; // Classe servant à améliorer une population
 
 void print_pop(CPopulation< CChemin<CVille> > Pop)
 {
+    // fonction affichant sur l'écran
+    // le meilleur chemin de chaque population
     for(int i=0;i<NB_CHEMIN;i++)
     {
         Elitisme Eli1(1);
@@ -35,7 +38,13 @@ void print_pop(CPopulation< CChemin<CVille> > Pop)
         y = One[0][0].get_y()*FACTOR_Y;
         cng_current_color(255, 0, 0);
         cng_circle(x, y, 5);
-        cout<<One[0].Fitness()<<endl;
+
+        string s = to_string(One[0].Fitness());
+        char const* pchar = s.c_str();
+        char const* txt = "Fitness du meilleur de la generation :";
+        cng_current_color(0, 255, 0);
+        cng_draw_string(txt, 10, 28);
+        cng_draw_string(pchar, 220, 28);
         for(int j=1;j<NB_VILLE;j++)
         {
             x1 = One[0][j].get_x()*FACTOR_X;
@@ -53,28 +62,35 @@ void print_pop(CPopulation< CChemin<CVille> > Pop)
 
 void print_infos()
 {
+    // fonction affichant à l'écran le compteur de génération
     string s = to_string(cpt);
     char const* pchar = s.c_str();
-    char const* txt = "Generation:";
+    char const* txt = "Generation :";
     cng_current_color(0, 255, 0);
-    cng_draw_string(txt, 10, 10);
-    cng_draw_string(pchar, 100, 10);
+    cng_draw_string(txt, 10, 15);
+    cng_draw_string(pchar, 80, 15);
 }
 
 
 void dessin(void)
 {
+    // fonction principale, récurssive, servant à l'affichage
+    // et à lancer l'amélioration de la population
     if(cpt < MAX_ITER)
     {
-
+    // on affiche à l'écran le meilleur chemin de la population
     print_pop(Pop);
 
+    //on améliore la population
     Upg.start(&Pop);
 
+    // affichage d'informations
     print_infos();
 
-
+    // on met la programme en pause quelques milisecondes
     usleep(10000);
+
+    // on efface l'écran
     cng_swap_screen();
     cng_clear_screen();
     cpt ++;
@@ -84,30 +100,21 @@ void dessin(void)
 
 int main(int argc, char** argv)
 {
+    // Pour un aléatoire différent sur chaque éxécution
     srand(time(NULL));
-    // Pop.Print();
-    init_pop(&Pop);
-    // Pop.Print();
 
+    // initialisation de la population
+    // avec des villes placées aléatoirement
+    init_pop(&Pop);
+
+    // initialisation et lancement
+    // de la fenetre graphique
     char titre[35] = "Le voyageur de commerce";
     cng_init_window(&argc, argv, titre, 1200, 675);
     cng_display_func(dessin);
     cng_clear_screen();
     cng_main_loop();
     cng_destroy_window();
-
-    // CVille v1("Toulon", 0, 1), v2("Toulouse", 0, 2), v3("Renes", 0, 3), v4("Bordeau", 0, 4);
-    // CVille V4[4] = {v1, v2, v3, v4};
-    // CChemin<CVille> c3(V4, 4);
-    // CVille V5[4] = {v4, v3, v2, v1};
-    // CChemin<CVille> c4(V5, 4);
-    // CChemin<CVille> C1[2] = {c3, c4};
-    // CPopulation< CChemin<CVille> > p1(C1, 2);
-    //
-    // Croisement Cro;
-    // p1.Print();
-    // CPopulation< CChemin<CVille> > p2 = Cro.start(p1);
-    // p2.Print();
 
     return 0;
 
